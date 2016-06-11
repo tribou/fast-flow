@@ -1,0 +1,27 @@
+{
+  "name": "fast-flow",
+  "version": "0.0.1",
+  "description": "Pipes files to flow check-content",
+  "main": "index.js",
+  "bin": {
+    "fflow": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "flow"
+  ],
+  "author": "tribou",
+  "license": "MIT",
+  "devDependencies": {
+    "flow-bin": "^0.27.0"
+  },
+  "peerDependencies": {
+    "flow-bin": "^0.27.0"
+  },
+  "dependencies": {
+    "cat": "^0.2.0",
+    "commander": "^2.9.0"
+  }
+}
