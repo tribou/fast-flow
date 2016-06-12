@@ -1,14 +1,18 @@
 #!/usr/bin/env node
 'use strict'
 
-const cmd = require('commander')
+const program = require('commander')
 const exec = require('child_process').exec
 
-cmd
-  .arguments('<file>')
+program
+  .version('0.0.1')
+
+program
+  .command('check <file>')
   .option('--show-all-errors')
   .option('--json')
-  .action((file) => {
+  .action((file, options) => {
+
 
     const command = `cat ${file} | flow check-contents --show-all-errors --json`
     exec(command, (error, stdout, stderr) => {
@@ -27,13 +31,15 @@ cmd
 
       }
 
-      console.log(stdout)
+      // process.stdout.write(stdout)
       const parsed = JSON.parse(stdout)
       if (!parsed.passed) {
+        process.stderr.write(stdout)
         process.exit(1)
       }
 
     })
 
   })
-  .parse(process.argv)
+
+program.parse(process.argv)
