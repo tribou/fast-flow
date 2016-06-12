@@ -11,7 +11,7 @@ npm install -g fast-flow flow-bin
 #### Usage
 
 ```
-fflow index.js
+fflow check index.js
 
 ```
 
