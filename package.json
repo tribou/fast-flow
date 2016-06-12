@@ -15,13 +15,12 @@
   "author": "tribou",
   "license": "MIT",
   "devDependencies": {
-    "flow-bin": "^0.27.0"
   },
   "peerDependencies": {
     "flow-bin": "^0.27.0"
   },
   "dependencies": {
-    "cat": "^0.2.0",
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "flow-bin": "^0.27.0"
   }
 }

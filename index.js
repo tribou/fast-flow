@@ -13,6 +13,20 @@ cmd
     const command = `cat ${file} | flow check-contents --show-all-errors --json`
     exec(command, (error, stdout, stderr) => {
 
+      if (stderr) {
+
+        console.error(stderr)
+        process.exit(1)
+
+      }
+
+      if (error) {
+
+        console.error(error)
+        process.exit(1)
+
+      }
+
       console.log(stdout)
       const parsed = JSON.parse(stdout)
       if (!parsed.passed) {
